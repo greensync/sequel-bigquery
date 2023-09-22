@@ -31,7 +31,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'amazing_print', '~> 1.3'
-  spec.add_dependency 'google-cloud-bigquery', '~> 1.35'
+  spec.add_dependency 'google-apis-bigquery_v2', '~> 0.59'
+  spec.add_dependency 'google-cloud-bigquery', '~> 1.44'
   spec.add_dependency 'paint', '~> 2.2'
   spec.add_dependency 'sequel', '~> 5.63'
 end
