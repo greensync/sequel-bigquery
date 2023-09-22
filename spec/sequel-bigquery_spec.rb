@@ -1,10 +1,10 @@
-# frozen-string-literal: true
+# frozen_string_literal: true
 
 require 'spec_helper'
 
 Sequel.extension :migration
 
-RSpec.describe Sequel::Bigquery do # rubocop:disable RSpec/FilePath
+RSpec.describe Sequel::Bigquery do
   let(:db) do
     Sequel.connect(
       adapter: :bigquery,
@@ -49,9 +49,9 @@ RSpec.describe Sequel::Bigquery do # rubocop:disable RSpec/FilePath
   def isolated_dataset_name(name)
     [
       name,
-      ENV['GITHUB_USERNAME'],
-      ENV['BUILDKITE_BUILD_NUMBER'],
-      ENV['TEST_ENV_NUMBER'],
+      ENV.fetch('GITHUB_USERNAME', nil),
+      ENV.fetch('BUILDKITE_BUILD_NUMBER', nil),
+      ENV.fetch('TEST_ENV_NUMBER', nil),
     ].compact.join('_')
   end
 
@@ -173,18 +173,18 @@ RSpec.describe Sequel::Bigquery do # rubocop:disable RSpec/FilePath
   describe 'alter table migration' do
     let(:migrations_dir) { 'spec/support/migrations/alter_table' }
     let(:expected_sql) do
-      'ALTER TABLE `alter_people` '\
-        'ADD COLUMN `col1` string, '\
-        'ADD COLUMN `col2` string, '\
-        'ADD COLUMN `col3` string, '\
-        'ADD COLUMN `col4` string, '\
-        'ADD COLUMN `col5` string, '\
-        'ADD COLUMN `col6` string, '\
-        'ADD COLUMN `col7` string, '\
-        'ADD COLUMN `col8` string, '\
-        'ADD COLUMN `col9` string, '\
-        'ADD COLUMN `col10` string, '\
-        'ADD COLUMN `col11` string, '\
+      'ALTER TABLE `alter_people` ' \
+        'ADD COLUMN `col1` string, ' \
+        'ADD COLUMN `col2` string, ' \
+        'ADD COLUMN `col3` string, ' \
+        'ADD COLUMN `col4` string, ' \
+        'ADD COLUMN `col5` string, ' \
+        'ADD COLUMN `col6` string, ' \
+        'ADD COLUMN `col7` string, ' \
+        'ADD COLUMN `col8` string, ' \
+        'ADD COLUMN `col9` string, ' \
+        'ADD COLUMN `col10` string, ' \
+        'ADD COLUMN `col11` string, ' \
         'ADD COLUMN `col12` string'
     end
 

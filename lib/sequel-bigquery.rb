@@ -1,4 +1,4 @@
-# frozen-string-literal: true
+# frozen_string_literal: true
 
 require 'delegate'
 require 'time'
@@ -201,7 +201,7 @@ module Sequel
 
       def warn_transaction
         warn(
-          'Warning: Transaction detected. This only supported on BigQuery in a script or session. '\
+          'Warning: Transaction detected. This only supported on BigQuery in a script or session. ' \
           'Commencing buffering to run the whole transaction at once as a script upon commit. ' \
           'Note that no result data is returned while the transaction is open.',
         )

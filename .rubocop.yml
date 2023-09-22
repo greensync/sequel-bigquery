@@ -22,7 +22,7 @@ Metrics/BlockLength:
 Layout/LineLength:
   Enabled: true
   Max: 140
-  IgnoredPatterns:
+  AllowedPatterns:
     # Ignore line length of comment-only lines:
     - '(\A\s*)#'
 Layout/SpaceBeforeBrackets:
@@ -103,9 +103,10 @@ RSpec/DescribedClass:
   Enabled: false
 RSpec/ExpectChange:
   EnforcedStyle: block
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   CustomTransform:
     GreenSync: greensync
+  Enabled: false
 RSpec/ImplicitSubject:
   Enabled: false
 RSpec/LeakyConstantDeclaration:
